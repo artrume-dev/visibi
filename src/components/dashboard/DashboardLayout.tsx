@@ -8,7 +8,8 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   LayoutDashboard, 
   Search, 
-  Target, 
+  Target,
+  ChartNoAxesGantt,
   Settings, 
   BarChart3,
   Menu,
@@ -53,8 +54,8 @@ export default function DashboardLayout({
           {/* Logo */}
           <div className="h-16 flex items-center justify-between px-6 border-b dark:border-slate-900">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <Target className="h-6 w-6 text-blue-600" />
-              <span className="font-bold text-lg">GEO Intel</span>
+              <ChartNoAxesGantt className="h-8 w-8 dark:text-white rotate-90" />
+              <span className="font-bold text-lg">VISIBI</span>
             </Link>
             <Button
               variant="ghost"

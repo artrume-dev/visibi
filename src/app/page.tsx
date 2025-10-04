@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BarChart3, Search, Target, Zap } from "lucide-react";
+import { ArrowRight, BarChart3, Search, Target, ChartNoAxesGantt, Loader, Square, ListMinus, Zap } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <header className="border-b bg-white/80 dark:bg-black/80 backdrop-blur-sm sticky top-0 z-50 dark:border-slate-900">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Target className="h-8 w-8 text-blue-600 dark:text-blue-500" />
+            <ChartNoAxesGantt className="h-8 w-8 dark:text-white rotate-90" />
             <span className="font-bold text-xl block">VISIBI</span>
            </div>
           <nav className="hidden md:flex items-center gap-6">

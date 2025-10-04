@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GEO Intelligence Platform",
-  description: "AI-powered GEO analytics and competitive intelligence",
+  title: "VISBI - AI Analytics Platform",
+  description: "AI-powered VISIBI analytics and competitive intelligence",
 };
 
 export default function RootLayout({
