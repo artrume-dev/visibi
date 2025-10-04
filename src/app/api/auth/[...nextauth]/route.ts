@@ -3,5 +3,5 @@ import { authConfig } from "@/lib/auth/config";
 
 const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
 
-export { handlers as GET, handlers as POST };
+export const { GET, POST } = handlers;
 export { auth, signIn, signOut };

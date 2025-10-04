@@ -55,7 +55,7 @@ export function LoginForm() {
       toast.success("Welcome back!");
       router.push("/dashboard");
       router.refresh();
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);

@@ -67,7 +67,7 @@ export function RegisterForm() {
 
       toast.success("Account created! Please sign in.");
       router.push("/login");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);

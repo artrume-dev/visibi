@@ -83,7 +83,7 @@ export default function DashboardPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">GEO Performance Dashboard</h1>
           <p className="text-muted-foreground mt-2">
-            Monitor your brand's presence across AI search engines
+            Monitor your brand&apos;s presence across AI search engines
           </p>
         </div>
 
@@ -93,26 +93,22 @@ export default function DashboardPage() {
             title="Mention Rate"
             value={`${metrics.mentionRate}%`}
             change={metrics.mentionChange}
-            trend="up"
           />
           <MetricCard
             title="Avg Position"
             value={metrics.avgPosition.toFixed(1)}
             change={metrics.positionChange}
-            trend="up"
             inverseGood
           />
           <MetricCard
             title="Citations"
             value={metrics.citationCount}
             change={metrics.citationChange}
-            trend="up"
           />
           <MetricCard
             title="Sentiment"
             value={metrics.sentimentScore.toFixed(2)}
             change={metrics.sentimentChange}
-            trend="up"
           />
         </div>
 
@@ -315,13 +311,11 @@ function MetricCard({
   title,
   value,
   change,
-  trend,
   inverseGood = false,
 }: {
   title: string;
   value: string | number;
   change: number;
-  trend: "up" | "down";
   inverseGood?: boolean;
 }) {
   const isPositive = inverseGood ? change < 0 : change > 0;
