@@ -1,14 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BarChart3, Search, Target, ChartNoAxesGantt, Loader, Square, ListMinus, Zap } from "lucide-react";
+import { ArrowRight, BarChart3, Search, Target, ChartNoAxesGantt, Loader, Square, ListMinus, Zap, PlayIcon, PlayCircle, PlayCircleIcon, PlaySquare } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-black dark:to-slate-950">
+
+    <div className="min-h-screen bg-gradient-to-t from-white to-gray-100 dark:from-black dark:to-slate-950 relative">
+
+            {/* Background Image */}
+      <div className="fixed inset-0 -top-64 z-0 opacity-8 dark:opacity-10 pointer-events-none">
+        <Image
+          src="/visibi-wave-bg.png"
+          alt="Background"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+
       {/* Header */}
-      <header className="border-b bg-white/80 dark:bg-black/80 backdrop-blur-sm sticky top-0 z-50 dark:border-slate-900">
+      <header className="max-w-7xl mx-auto rounded-4xl border-t bg-white/80 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] dark:border-slate-800 shadow-lg relative">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ChartNoAxesGantt className="h-8 w-8 dark:text-white rotate-90" />
@@ -22,7 +36,7 @@ export default function Home() {
               How It Works
             </Link>
             <ThemeToggle />
-            <Button asChild>
+            <Button asChild className="text-sm font-medium rounded-4xl hover:bg-blue-100 dark:hover:bg-slate-800 dark:hover:text-white transition-colors">
               <Link href="/dashboard">Get Started</Link>
             </Button>
           </nav>
@@ -30,37 +44,41 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section className="container max-w-7xl mx-auto items-left px-4 py-20 md:py-32 relative">
+        {/* Content */}
+        <div className="max-w-3xl mx-l text-left space-y-8 relative z-10">
           <div className="inline-block">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 text-sm font-medium border dark:border-blue-900">
               <Zap className="h-4 w-4" />
               AI-Powered GEO Analytics
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Dominate AI Search Results
-            <span className="block text-gray-600 dark:text-gray-300 mt-2">Before Your Competitors</span>
-          </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            Know Where Your Brand Stands in AI Conversations
+            {/* <span className="block text-gray-900 dark:text-slate-200 mt-2 font-light">Before Your Competitors</span> */}
+            </h1>
+            <h2 className="text-3xl md:text-4xl font-medium text-blue-700 dark:text-slate-100 mt-4">
+            Uncover your brand’s visibility and reputation across leading AI platforms.
+            </h2>
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl">
             Track, analyze, and optimize your brand&apos;s presence across ChatGPT, Claude, Gemini, 
             and Perplexity. Get actionable insights to improve your GEO performance.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg">
+          <div className="flex flex-col sm:flex-row gap-4 justify-left">
+            <Button size="lg" asChild className="text-md dark:bg-white dark:hover:bg-slate-800 dark:hover:text-white rounded-4xl">
               <Link href="/dashboard">
                 Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg">
-              Watch Demo
+            <Button size="lg" variant="outline" className="text-md dark:bg-slate-950 dark:hover:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-4xl">
+              Watch Demo <PlayIcon className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container mx-auto px-4 py-20 bg-white dark:bg-black">
+      <section id="features" className="container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -72,7 +90,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <Search className="h-10 w-10 text-blue-600 mb-2" />
                 <CardTitle>Multi-Engine Testing</CardTitle>
@@ -87,7 +105,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <BarChart3 className="h-10 w-10 text-green-600 mb-2" />
                 <CardTitle>Performance Analytics</CardTitle>
@@ -102,7 +120,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <Target className="h-10 w-10 text-purple-600 mb-2" />
                 <CardTitle>Competitive Intelligence</CardTitle>
@@ -117,7 +135,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <Zap className="h-10 w-10 text-orange-600 mb-2" />
                 <CardTitle>Real-time Alerts</CardTitle>
@@ -132,7 +150,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <BarChart3 className="h-10 w-10 text-red-600 mb-2" />
                 <CardTitle>Citation Analysis</CardTitle>
@@ -147,7 +165,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-white dark:bg-gray-950 border dark:border-slate-800">
               <CardHeader>
                 <Target className="h-10 w-10 text-blue-600 mb-2" />
                 <CardTitle>Content Optimization</CardTitle>
@@ -210,8 +228,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
-        <Card className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+      <section className="mx-auto pb-0 pt-20">
+        <Card className="max-w-full mx-auto bg-gradient-to-t from-gray-950 to-black text-white border-0 rounded-none">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Dominate AI Search?
@@ -243,5 +261,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
+);
 }
+
